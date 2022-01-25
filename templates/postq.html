@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Post Quote{% endblock title %}
+
+{% block body %}
+<style>
+    h1{
+        color: rgb(30, 16, 110);
+    }
+</style>
+
+<div class="container mb-3 py-3">
+    <h1 class="text-center">Post Quote</h1>
+    <form method="post" action="/postq">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInput1" >First Name</label>
+            <input type="firstname" class="form-control" id="exampleInput1" name="firstname" placeholder="Enter you First Name here">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInput2" >Last Name</label>
+            <input type="lastname" class="form-control" id="exampleInput2" name="lastname" placeholder="Enter you Last Name here">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInput3" class="form-label">Age</label>
+            <input type="age" class="form-control" id="exampleInput3" name="age" placeholder="Enter your Age here">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInput4" >Location</label>
+            <input type="location" class="form-control" id="exampleInput2" name="location" placeholder="Enter you Location here">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter your Quote!</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="quot" rows="3"></textarea>
+        </div>
+        
+        <button type="submit" class="btnn btn-secondary">Submit</button>
+         
+        
+    </form>
+</div>  
+<br/>
+<a href="/home">
+    <button class="btn btn-warning">Go to Home Page!</button> 
+</a>
+<footer class="blog-footer text-center">
+    <p>©Satya Creations<p>
+  </footer>     
+{% endblock body %}

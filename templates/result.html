@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Result{% endblock title %}
+
+{% block body %}
+<style>
+    h1{
+        color: rgb(41, 13, 94);
+    }
+</style>
+
+<h1 class="text-center text-decoration-underline color:green">Quotes</h1>
+
+
+
+
+{% for data in result_list %}
+<div class="card">
+    <div class="card-header">
+        {{ data.firstname }} {{data.lastname}}, {{data.age}}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{ data.quot }}</p>
+        <footer class="blockquote-footer">{{ data.location }}<cite title="Source Title">, {{ data.date }}</cite></footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <br/><br/>
+{% endfor %}   
+
+<footer class="blog-footer text-center">
+  <p>©Satya Creations<p>
+</footer>
+{% endblock body %}
